@@ -1,4 +1,5 @@
 package com.example.unimpdemo;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
@@ -13,31 +14,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
+import com.example.unimpdemo.base.BaseActivity;
+import com.example.unimpdemo.module.update.Version;
+import com.example.unimpdemo.module.update.VersionUpdateDialog;
 import com.example.unimpdemo.util.DownloadUtil;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.dcloud.feature.sdk.DCUniMPSDK;
-import io.dcloud.feature.sdk.Interface.IDCUniMPOnCapsuleCloseButtontCallBack;
-import io.dcloud.feature.sdk.Interface.IMenuButtonClickCallBack;
-import io.dcloud.feature.sdk.Interface.IOnUniMPEventCallBack;
 import io.dcloud.feature.sdk.Interface.IUniMP;
-import io.dcloud.feature.sdk.Interface.IUniMPOnCloseCallBack;
-import io.dcloud.feature.unimp.DCUniMPJSCallback;
 import io.dcloud.feature.unimp.config.IUniMPReleaseCallBack;
 import io.dcloud.feature.unimp.config.UniMPOpenConfiguration;
 import io.dcloud.feature.unimp.config.UniMPReleaseConfiguration;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
     Context mContext;
     Handler mHandler;
     /** unimp小程序实例缓存**/
@@ -48,6 +46,7 @@ public class MainActivity extends Activity {
         mContext = this;
         mHandler = new Handler();
         setContentView(R.layout.main);
+        ButterKnife.bind(this);
         Button button1 = findViewById(R.id.button1);
 
         //用来测试sdkDemo 胶囊×的点击事件，是否生效；lxl增加的
@@ -324,7 +323,17 @@ public class MainActivity extends Activity {
             }
         }
     }
-
+    @OnClick(R.id.button9)
+    public void button9(View view) {
+        /*  版本更新测试*/
+        Intent in = new Intent(mContext, VersionUpdateDialog.class);
+        Version bean = new Version();
+        bean.setVersionName(androidUtil.getApkVersionName());
+        bean.setUpdateInfo("1.更新一些小bug");
+        bean.setApkUrl("http://knowapp.b0.upaiyun.com/hz/knowbox_student_2631.apk");
+        in.putExtra("VERSION", bean);
+        startActivity(in);
+    }
     /**
      * 检查是否拥有指定的所有权限
      */

@@ -36,6 +36,7 @@ android {
             zipAlignEnabled false
             shrinkResources false
             signingConfig signingConfigs.myConfig
+            buildConfigField "boolean", "LOG_DEBUG", "true"
 //            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
         }
         release {
@@ -43,6 +44,7 @@ android {
             zipAlignEnabled false
             shrinkResources false
             signingConfig signingConfigs.myConfig
+            buildConfigField "boolean", "LOG_DEBUG", "true"
 //            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
         }
     }
@@ -68,9 +70,9 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation fileTree(include: ['*.aar'], dir: 'libs')
     //必须添加的依赖
-    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    implementation "androidx.appcompat:appcompat:1.0.0"
+    implementation "androidx.appcompat:appcompat:1.3.0"
     implementation 'com.alibaba:fastjson:1.2.66'
     implementation 'com.facebook.fresco:fresco:2.5.0'
     implementation 'com.facebook.fresco:animated-gif:2.5.0'
@@ -82,6 +84,16 @@ dependencies {
     implementation project(':TestModule')
     implementation project(':TestComponent')
 
-    implementation 'com.squareup.okhttp3:okhttp:3.7.0'
-    implementation 'com.squareup.okio:okio:1.8.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okio:okio:1.14.0'
+
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    //必须使用
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.readystatesoftware.chuck:library:1.0.4'
+    // 基础依赖包，必须要依赖
+    implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+    implementation 'com.google.code.gson:gson:2.9.0'
 }

@@ -1,3 +1,125 @@
 <resources>
     <string name="app_name">UnimpDemo</string>
+    <!-- app数据根目录 -->
+    <string name="dir">/Android/data/com.yuecheng.workportal</string>
+    <!--拍照临时文件-->
+    <string name="camera_temp">/cameratemp/</string>
+    <!--Bitmap缓存路径-->
+    <string name="bitmap_cache">/bitmapcache/</string>
+    <!-- apk下载文件路径 -->
+    <string name="apk_download">/apkdownload/</string>
+    <!-- file缓存路径 -->
+    <string name="file_temp">/filetemp/</string>
+
+    <!-- 版本更新和提示 -->
+    <string name="update_new_hint">版本更新</string>
+    <string name="version_new_hint">有新版本啦！更新内容如下：</string>
+    <string name="check_new_hint">拍照或文字回答</string>
+    <string name="no_update_hint">暂不更新</string>
+    <string name="update_now_hint">更新</string>
+    <string name="update_desc_hint">描述:</string>
+    <string name="update_dialog_title">发现新版本</string>
+    <string name="exit_application">再次点击退出应用</string>
+
+    <!--加载数据提示-->
+    <string name="amicable_view_tryagain">轻触屏幕，重新加载试试</string>
+    <string name="amicable_view_loading">正在加载&#8230;</string>
+    <string name="service_error_text1">网络不稳定</string>
+    <string name="maybe_reason">可能原因:</string>
+    <string name="service_error_text2">尚未接入互联网</string>
+    <string name="service_error_text3">安全软件禁止访问网络</string>
+    <string name="service_error_text4">服务器发生未知异常</string>
+    <string name="empty_list">数据为空！</string>
+    <string name="history_empty_left">没有找到\"</string>
+    <string name="history_empty_right">\"相关结果</string>
+    <string name="openfile_error">文件路径错误，无法打开</string>
+    <string name="loading_error">加载失败\n文件路径错误或者不存在</string>
+    <string name="loading">已加载</string>
+    <string name="nonsupport_file">不支持的文件格式</string>
+    <string name="no_file">文件不存在</string>
+    <string name="open_file">打开文件</string>
+
+    <string name="prompt">提示</string>
+    <string name="clock_prompt_head">考勤提醒</string>
+    <string name="clock_prompt_body">马上就要上班了，不要忘记打卡哦</string>
+    <string name="clock_prompt_off_work">下班了，不要忘记打卡哦</string>
+    <string name="retry">重试</string>
+    <string name="download_error_retry">下载发生错误，请重试</string>
+    <string name="new_version_downloading">新版本正在下载...</string>
+    <string name="start_downloading">开始下载</string>
+    <string name="downloaded">已下载&#160;</string>
+    <string name="download_completed">下载完成,请安装!</string>
+    <string name="not_installed">未安装此应用</string>
+    <string name="get_session_fail">用户会话信息获取失败,请重新登录</string>
+    <string name="recognization">正在识别中...</string>
+    <string name="no_speak">您好像没有说话哦</string>
+    <string name="issave_pic">是否保存该图片</string>
+    <string name="save_complete">文件下载完成</string>
+    <string name="net_slow">网络状态差或者服务器处理缓慢,请重试</string>
+    <string name="check_connection">网络未连接，请检查网络设置</string>
+    <string name="server_net_error">请求失败,网络或服务器发生未知异常</string>
+    <string name="record_error">录音启动失败，请检查是否有其他应用占用录音</string>
+    <string name="server_without_permission">登陆失败</string>
+    <string name="lack_voice_permissions">需要开启录音和手机存储权限，请去设置页面开启</string>
+    <string name="lack_call_phone_permissions">需要开启打电话权限，请去设置页面开启</string>
+    <string name="lack_sdcard_permissions">需要您开启手机存储权限，请去设置页面开启</string>
+    <string name="server_error">服务器发生异常</string>
+    <string name="check_sdcard">请检查手机有无可用存储</string>
+    <string name="settings">设置</string>
+    <string name="msg_notice">消息通知</string>
+    <string name="voice_prompt">声音提示</string>
+    <string name="vibration_notice">震动提示</string>
+    <string name="synergy_notice">协同通知</string>
+    <string name="meeting_notice">会议通知</string>
+    <string name="meeting_synchronous">会议同步</string>
+    <string name="meeting_remind">会议提醒周期</string>
+    <string name="opinion_feedback">意见反馈</string>
+    <string name="guide_page">引导页</string>
+    <string name="privacy_protection">隐私保护指引</string>
+    <string name="service_agreement"><u>服务协议</u></string>
+    <string name="privacy_policy"><u>隐私政策</u></string>
+    <string name="not_used">暂不使用</string>
+    <string name="agree">同意</string>
+    <string name="check_update">检查更新</string>
+    <string name="close">关闭</string>
+    <string name="exit">退出</string>
+    <string name="exit_yc">退出</string>
+    <string name="lost_session">登录验证失效,请重新登录</string>
+    <string name="offline_session">该账户在其他设备登录,请重新登录</string>
+    <string name="delete">删除</string>
+    <string name="relogin">重新登录</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="stting">去设置</string>
+    <string name="open_position">请开启位置服务，获取精准定位</string>
+    <string name="exit_app_message">您确定要退出吗?</string>
+    <string name="version_update">版本更新</string>
+    <string name="version_update_hint">已是最新版本</string>
+    <string name="no_message">关闭后将接收不到消息提醒</string>
+
+    <!--登录提示-->
+    <string name="login_password_no_empty">密码不能为空  The password is not null</string>
+    <string name="login_phone_format">请确认手机号格式是否正确  Confirm the format is correct</string>
+    <string name="login_send_success">发送成功 Sent Successfully</string>
+    <string name="send_success">发送成功</string>
+    <string name="login_user_name">用户名  Username</string>
+    <string name="login_input_user_name">用户名  Username</string>
+    <string name="login_my_phone">手机号码  Phone Number</string>
+    <string name="login_input_phone">手机号码 Phone Number</string>
+    <string name="login_password">密码  Password</string>
+    <string name="login_input_password">密码 Password</string>
+    <string name="login_sms_code">短信验证码  Verification Code</string>
+    <string name="login_input_sms_code">短信验证码  Verification Code</string>
+    <string name="login_code_obtain">获取  Obtain</string>
+    <string name="login_again_obtain">重新获取  Regain</string>
+    <string name="login_account">账号密码登录  Account Password</string>
+    <string name="login_dynamic">动态密码登录  One-time Password</string>
+    <string name="login_login">登录  Log In</string>
+    <string name="login_user_error">用户名或密码错误  User name or password error</string>
+    <string name="login_check_connection">糟糕，网络未连接。请检查网络设置  Please check the network</string>
+    <string name="login_server_net_error">请求失败,网络或服务器发生未知异常  Server or network error </string>
+    <string name="old_password_error">原始密码错误，请重试 </string>
+    <string name="login_verification_failure">验证码失效 Verification code failure</string>
+    <string name="login_verification_error">验证码错误 Verification code error</string>
+    <string name="login_network_anomalies">网络异常 Network anomalies</string>
 </resources>

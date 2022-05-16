@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/ffffff"
-
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -16,7 +17,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/button1"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
@@ -24,10 +25,10 @@
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
+                android:layout_height="50dp"/>
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/button2"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
@@ -35,10 +36,10 @@
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
+                android:layout_height="50dp"/>
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/button3"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
@@ -46,10 +47,10 @@
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
+                android:layout_height="50dp"/>
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/button4"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
@@ -57,10 +58,10 @@
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
+                android:layout_height="50dp"/>
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/button5"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
@@ -68,10 +69,10 @@
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
+                android:layout_height="50dp"/>
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/button6"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
@@ -79,10 +80,10 @@
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
+                android:layout_height="50dp"/>
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/button7"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
@@ -90,10 +91,10 @@
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
+                android:layout_height="50dp"/>
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/button8"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
@@ -101,19 +102,28 @@
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
+                android:layout_height="50dp"/>
 
             <Button
-                android:background="@color/colorBl"
+                android:background="@drawable/button_bg"
                 android:id="@+id/btn_encrypt_wgt_install"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
-                android:text="远程下载加密wgt 并安装"
+                android:text="远程wgt更新"
                 android:textColor="@color/ffffff"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></Button>
-
+                android:layout_height="50dp"/>
+            <Button
+                android:background="@drawable/button_bg"
+                android:id="@+id/button9"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="原生APP版本更新"
+                android:textColor="@color/ffffff"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
         </LinearLayout>
 
     </ScrollView>
