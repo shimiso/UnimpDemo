@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+//必须配置
+def mfph = [
+    //包名
+    "apk.applicationId" : "com.example.unimpdemo",
+]
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.example.unimpdemo"
+        minSdkVersion 21 // uniapp必须是19及以上
+        targetSdkVersion 26 //最高28最优26 设置值域超过28可能在android10以上手机出现白屏问题。
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        manifestPlaceholders = mfph
+        ndk {
+            //NDK 配置时请去除x86 cpu的配置 建议仅配置"armeabi-v7a" 否则可能无法正常使用X5内核。3.0.7+版本开始支持 “arm64-v8a”
+            abiFilters 'x86','armeabi-v7a',"arm64-v8a" //不支持armeabi
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    //签名配置
+    signingConfigs {
+        myConfig {
+            storeFile file('../workportal.jks')
+            keyAlias 'workportal'
+            keyPassword 'workportal2018'
+            storePassword 'workportal2018'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.myConfig
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+        }
+        release {
+            minifyEnabled true
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.myConfig
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+        }
+    }
+    //此处配置必须添加 否则无法正确运行
+    aaptOptions {
+        additionalParameters '--auto-add-overlay'
+        //noCompress 'foo', 'bar'
+        ignoreAssetsPattern "!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~"
+    }
+	compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+//导入aar需要的配置
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    //导入SDK相关依赖jar、aar
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+    //必须添加的依赖
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "androidx.appcompat:appcompat:1.0.0"
+    implementation 'com.alibaba:fastjson:1.2.66'
+    implementation 'com.facebook.fresco:fresco:2.5.0'
+    implementation 'com.facebook.fresco:animated-gif:2.5.0'
+    implementation 'com.facebook.fresco:webpsupport:2.5.0'
+    implementation 'com.facebook.fresco:animated-webp:2.5.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation project(':TestModule')
+    implementation project(':TestComponent')
+
+    implementation 'com.squareup.okhttp3:okhttp:3.7.0'
+    implementation 'com.squareup.okio:okio:1.8.0'
+}

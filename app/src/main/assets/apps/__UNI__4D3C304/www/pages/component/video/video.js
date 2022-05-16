@@ -1,0 +1,32 @@
+"use weex:vue";
+
+if (typeof Promise !== 'undefined' && !Promise.prototype.finally) {
+  Promise.prototype.finally = function(callback) {
+    const promise = this.constructor
+    return this.then(
+      value => promise.resolve(callback()).then(() => value),
+      reason => promise.resolve(callback()).then(() => {
+        throw reason
+      })
+    )
+  }
+};
+
+if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
+  const global = uni.requireGlobal()
+  ArrayBuffer = global.ArrayBuffer
+  Int8Array = global.Int8Array
+  Uint8Array = global.Uint8Array
+  Uint8ClampedArray = global.Uint8ClampedArray
+  Int16Array = global.Int16Array
+  Uint16Array = global.Uint16Array
+  Int32Array = global.Int32Array
+  Uint32Array = global.Uint32Array
+  Float32Array = global.Float32Array
+  Float64Array = global.Float64Array
+  BigInt64Array = global.BigInt64Array
+  BigUint64Array = global.BigUint64Array
+};
+
+
+(()=>{var E=Object.create;var g=Object.defineProperty;var _=Object.getOwnPropertyDescriptor;var b=Object.getOwnPropertyNames;var v=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var k=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var S=(e,t,i,l)=>{if(t&&typeof t=="object"||typeof t=="function")for(let o of b(t))!x.call(e,o)&&o!==i&&g(e,o,{get:()=>t[o],enumerable:!(l=_(t,o))||l.enumerable});return e};var B=(e,t,i)=>(i=e!=null?E(v(e)):{},S(t||!e||!e.__esModule?g(i,"default",{value:e,enumerable:!0}):i,e));var y=k((R,m)=>{m.exports=Vue});var F=Object.prototype.toString,p=e=>F.call(e),d=e=>p(e).slice(8,-1);function N(){return typeof __channelId__=="string"&&__channelId__}function h(e,t){switch(d(t)){case"Function":return"function() { [native code] }";default:return t}}function A(e,t,i){return N()?(i.push(t.replace("at ","uni-app:///")),console[e].apply(console,i)):i.map(function(o){let u=p(o).toLowerCase();if(["[object object]","[object array]","[object module]"].indexOf(u)!==-1)try{o="---BEGIN:JSON---"+JSON.stringify(o,h)+"---END:JSON---"}catch(r){o=u}else if(o===null)o="---NULL---";else if(o===void 0)o="---UNDEFINED---";else{let r=d(o).toUpperCase();r==="NUMBER"||r==="BOOLEAN"?o="---BEGIN:"+r+"---"+o+"---END:"+r+"---":o=String(o)}return o}).join("---COMMA---")+" "+t}function s(e,t,...i){let l=A(e,t,i);l&&console[e](l)}var n=B(y());var C=(e,t)=>{let i=e.__vccOpts||e;for(let[l,o]of t)i[l]=o;return i};var w={video:{"":{width:"750rpx",height:"400rpx",backgroundColor:"#808080"}},btn:{"":{marginTop:5,marginBottom:5}}},D={data(){return{src:"https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20181126-lite.m4v",fil:!0,list:[{text:"\u8981\u663E\u793A\u7684\u6587\u672C",color:"#FF0000",time:9}]}},onReady(){this.context=uni.createVideoContext("video1",this)},methods:{onstart(e){s("log","at pages/component/video/video.nvue:36","onstart:"+JSON.stringify(e))},onpause(e){s("log","at pages/component/video/video.nvue:39","onpause:"+JSON.stringify(e))},onfinish(e){s("log","at pages/component/video/video.nvue:42","onfinish:"+JSON.stringify(e))},onfail(e){s("log","at pages/component/video/video.nvue:45","onfail:"+JSON.stringify(e))},fullscreenchange(e){s("log","at pages/component/video/video.nvue:48","fullscreenchange:"+JSON.stringify(e))},waiting(e){s("log","at pages/component/video/video.nvue:51","waiting:"+JSON.stringify(e))},timeupdate(e){s("log","at pages/component/video/video.nvue:54","timeupdate:"+JSON.stringify(e))},play(){this.context.play()},pause(){this.context.pause()},seek(){this.context.seek(20)},stop(){this.context.stop()},fullScreen(){this.context.requestFullScreen({direction:90})},exitFullScreen(){this.context.exitFullScreen()},sendDanmu(){this.context.sendDanmu({text:"\u8981\u663E\u793A\u7684\u5F39\u5E55\u6587\u672C",color:"#FF0000"})},playbackRate(){this.context.playbackRate(2)}}};function O(e,t,i,l,o,u){let r=(0,n.resolveComponent)("button");return(0,n.openBlock)(),(0,n.createElementBlock)("scroll-view",{scrollY:!0,showScrollbar:!0,enableBackToTop:!0,bubble:"true",style:{flexDirection:"column"}},[(0,n.createElementVNode)("div",null,[(0,n.createElementVNode)("u-video",{id:"video1",class:"video",src:o.src,autoplay:"false",duration:"",controls:"true",danmuList:o.list,danmuBtn:"true",enableDanmu:"true",loop:!0,muted:"true",initialTime:"",direction:"-90",showMuteBtn:"true",onPlay:t[0]||(t[0]=(...a)=>u.onstart&&u.onstart(...a)),onPause:t[1]||(t[1]=(...a)=>u.onpause&&u.onpause(...a)),onEnded:t[2]||(t[2]=(...a)=>u.onfinish&&u.onfinish(...a)),onError:t[3]||(t[3]=(...a)=>u.onfail&&u.onfail(...a)),onWaiting:t[4]||(t[4]=(...a)=>u.waiting&&u.waiting(...a)),onTimeupdate:t[5]||(t[5]=(...a)=>u.timeupdate&&u.timeupdate(...a)),onFullscreenchange:t[6]||(t[6]=(...a)=>u.fullscreenchange&&u.fullscreenchange(...a))},null,40,["src","danmuList"]),(0,n.createVNode)(r,{class:"btn",onClick:u.play},{default:(0,n.withCtx)(()=>[(0,n.createTextVNode)("\u64AD\u653E")]),_:1},8,["onClick"]),(0,n.createVNode)(r,{class:"btn",onClick:u.pause},{default:(0,n.withCtx)(()=>[(0,n.createTextVNode)("\u6682\u505C")]),_:1},8,["onClick"]),(0,n.createVNode)(r,{class:"btn",onClick:u.seek},{default:(0,n.withCtx)(()=>[(0,n.createTextVNode)("\u8DF3\u8F6C\u5230\u6307\u5B9A\u4F4D\u7F6E")]),_:1},8,["onClick"]),(0,n.createVNode)(r,{class:"btn",onClick:u.stop},{default:(0,n.withCtx)(()=>[(0,n.createTextVNode)("\u505C\u6B62")]),_:1},8,["onClick"]),(0,n.createVNode)(r,{class:"btn",onClick:u.fullScreen},{default:(0,n.withCtx)(()=>[(0,n.createTextVNode)("\u5168\u5C4F")]),_:1},8,["onClick"]),(0,n.createVNode)(r,{class:"btn",onClick:u.exitFullScreen},{default:(0,n.withCtx)(()=>[(0,n.createTextVNode)("\u9000\u51FA\u5168\u5C4F")]),_:1},8,["onClick"]),(0,n.createVNode)(r,{class:"btn",onClick:u.playbackRate},{default:(0,n.withCtx)(()=>[(0,n.createTextVNode)("\u8BBE\u7F6E\u500D\u901F")]),_:1},8,["onClick"]),(0,n.createVNode)(r,{class:"btn",onClick:u.sendDanmu},{default:(0,n.withCtx)(()=>[(0,n.createTextVNode)("\u53D1\u9001\u5F39\u5E55")]),_:1},8,["onClick"])])])}var c=C(D,[["render",O],["styles",[w]]]);var f=plus.webview.currentWebview();if(f){let e=parseInt(f.id),t="pages/component/video/video",i={};try{i=JSON.parse(f.__query__)}catch(o){}c.mpType="page";let l=Vue.createPageApp(c,{$store:getApp({allowDefault:!0}).$store,__pageId:e,__pagePath:t,__pageQuery:i});l.provide("__globalStyles",Vue.useCssStyles([...__uniConfig.styles,...c.styles||[]])),l.mount("#root")}})();
