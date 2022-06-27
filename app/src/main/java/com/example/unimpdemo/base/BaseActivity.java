@@ -1,6 +1,5 @@
 package com.example.unimpdemo.base;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -18,11 +17,13 @@ import com.example.unimpdemo.util.SharePreferenceUtil;
 import com.example.unimpdemo.util.ToastUtil;
 import com.gyf.immersionbar.ImmersionBar;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 
 /**
  * Activity基类
  */
-public class BaseActivity extends Activity {
+public class BaseActivity extends AppCompatActivity {
     public final String TAG = this.getClass().getName();
     /**
      * 共享存储工具类
@@ -54,10 +55,6 @@ public class BaseActivity extends Activity {
      * @param barTintResource 通知栏颜色
      */
     protected void setBarColor(int barTintResource) {
-        //如果已经设置全屏了就无需再初始化窗口
-        if (isFullFullscreen) {
-            return;
-        }
         ImmersionBar.with(this)
                 .reset()  //重置所以沉浸式参数
                 .statusBarColor(barTintResource)     //状态栏颜色，不写默认透明色
@@ -78,6 +75,7 @@ public class BaseActivity extends Activity {
         //设置当前窗体为全屏显示
         window.setFlags(flag, flag);
         isFullFullscreen = true;
+        setBarColor(R.color.primary);
     }
 
     /**
@@ -126,7 +124,6 @@ public class BaseActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        //设置状态栏默认为系统颜色
         setBarColor(R.color.primary);
     }
 

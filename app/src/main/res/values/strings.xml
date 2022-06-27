@@ -122,4 +122,8 @@
     <string name="login_verification_failure">验证码失效 Verification code failure</string>
     <string name="login_verification_error">验证码错误 Verification code error</string>
     <string name="login_network_anomalies">网络异常 Network anomalies</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

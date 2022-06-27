@@ -13,7 +13,7 @@ import android.os.IBinder;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
-import com.example.unimpdemo.MainActivity;
+import com.example.unimpdemo.UniappTestActivity;
 import com.example.unimpdemo.MainApp;
 import com.example.unimpdemo.R;
 import com.example.unimpdemo.base.BaseService;
@@ -181,7 +181,7 @@ public class ApkDownloadService extends BaseService {
         mNotification.contentView = contentView;
 
 //        Intent intent = new Intent(this, WelcomeActivity.class);
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, UniappTestActivity.class);
         // 下面两句是 在按home后，点击通知栏，返回之前activity 状态;
         // 有下面两句的话，假如service还在后台下载， 在点击程序图片重新进入程序时，直接到下载界面，相当于把程序MAIN 入口改了 - -
         intent.setAction(Intent.ACTION_MAIN);
